@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/internal/Observable';
+import { catchError, map, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -15,6 +15,13 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
 
   getAlbum(id: number) {
-    return response.json();
-  }
+    return this._http.get(this._albumUrl)
+    .pipe(
+           map((data) => {
+             return data;
+           }), catchError( error => {
+             return throwError( 'Something went wrong!' );
+           })
+        );
+   }
 }
