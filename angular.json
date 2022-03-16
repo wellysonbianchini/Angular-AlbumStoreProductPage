@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pluralsight-project-build-an-album-store-product-page-with-angular": {
+    "app-www": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pluralsight-project-build-an-album-store-product-page-with-angular",
+            "outputPath": "dist/app-www",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pluralsight-project-build-an-album-store-product-page-with-angular:build:production"
+              "browserTarget": "app-www:build:production"
             },
             "development": {
-              "browserTarget": "pluralsight-project-build-an-album-store-product-page-with-angular:build:development"
+              "browserTarget": "app-www:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pluralsight-project-build-an-album-store-product-page-with-angular:build"
+            "browserTarget": "app-www:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "pluralsight-project-build-an-album-store-product-page-with-angular"
+  "defaultProject": "app-www"
 }
